@@ -18,136 +18,48 @@
 }
 *{box-sizing:border-box}
 html,body{height:100%}
-
-/* ✅背景（薄い方）を画面いっぱいに敷く */
 body{
   margin:0;
   background:var(--panel-bg);
   color:var(--text);
   font-family:"Noto Sans JP",system-ui,-apple-system,"Segoe UI",Roboto,"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
 }
+.frame{width:100vw;height:100vh;margin:0;padding:0;display:flex}
+.panel{width:100%;height:100%;background:var(--panel-bg);border:0;border-radius:0;padding:18px;box-shadow:none}
 
-/* ✅固定サイズをやめて、全面レイアウトにする */
-.frame{
-  width:100vw;
-  height:100vh;
-  margin:0;
-  padding:0;               /* ←外側の背景が見えなくなる */
-  display:flex;
-}
-
-/* ✅panelを“背景”として全面に敷く（外枠・角丸・影を消す） */
-.panel{
-  width:100%;
-  height:100%;
-  background:var(--panel-bg);
-  border:0;
-  border-radius:0;
-  padding:18px;            /* ←中身の余白はここで確保 */
-  box-shadow:none;
-}
-
-/* ====== ここから中身のデザイン ====== */
-.hero{
-  border-radius:var(--r);
-  padding:22px 26px;
-  color:#fff;
-  background:linear-gradient(90deg,var(--grad-l) 0%,var(--grad-m) 55%,var(--grad-r) 100%);
-  box-shadow:var(--shadow);
-}
+.hero{border-radius:var(--r);padding:22px 26px;color:#fff;background:linear-gradient(90deg,var(--grad-l) 0%,var(--grad-m) 55%,var(--grad-r) 100%);box-shadow:var(--shadow)}
 .hero h1{margin:0 0 10px;font-size:22px;font-weight:700;letter-spacing:.2px}
 .hero p{margin:0;font-size:12.8px;color:rgba(255,255,255,.88);line-height:1.55}
 .hero .note{margin-top:6px;font-size:12px;color:rgba(255,255,255,.78)}
 
 .row2{margin-top:16px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.card{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:var(--r);
-  padding:16px 18px;
-  box-shadow:var(--shadow-soft);
-}
-.card.accent{
-  border-color:rgba(91,134,255,.65);
-  box-shadow:0 10px 26px rgba(91,134,255,.12);
-}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:16px 18px;box-shadow:var(--shadow-soft)}
+.card.accent{border-color:rgba(91,134,255,.65);box-shadow:0 10px 26px rgba(91,134,255,.12)}
 .title{display:flex;align-items:center;gap:10px;margin:0 0 12px;color:var(--blue);font-weight:700;font-size:13.5px}
 .ico{width:18px;height:18px;display:inline-block}
 
 .list{margin:10px 0 12px;padding-left:18px;font-size:12.8px;color:#40506f}
 .list li{margin:6px 0}
-
-.dash{
-  border:2px dashed rgba(91,134,255,.65);
-  border-radius:var(--r-sm);
-  padding:10px 12px;
-  background:rgba(91,134,255,.06);
-  font-size:12px;
-  color:#3a4b72;
-}
+.dash{border:2px dashed rgba(91,134,255,.65);border-radius:var(--r-sm);padding:10px 12px;background:rgba(91,134,255,.06);font-size:12px;color:#3a4b72}
 
 .effects{display:grid;gap:10px;margin-top:8px}
 .effect-row{display:flex;align-items:center;gap:10px;font-size:12.8px;color:#40506f}
-.tag{
-  display:inline-flex;align-items:center;justify-content:center;
-  min-width:64px;
-  padding:3px 10px;
-  border-radius:999px;
-  background:var(--blue);
-  color:#fff;
-  font-weight:700;
-  font-size:12px;
-  box-shadow:0 6px 14px rgba(91,134,255,.25);
-}
+.tag{display:inline-flex;align-items:center;justify-content:center;min-width:64px;padding:3px 10px;border-radius:999px;background:var(--blue);color:#fff;font-weight:700;font-size:12px;box-shadow:0 6px 14px rgba(91,134,255,.25)}
 
-.big{
-  margin-top:16px;
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:var(--r);
-  padding:16px 18px;
-  box-shadow:var(--shadow-soft);
-  height:560px; /* 元の見た目を保つ固定。必要なら後で調整可 */
-}
+.big{margin-top:16px;background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:16px 18px;box-shadow:var(--shadow-soft);height:560px}
 
 .section-head{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--blue);margin:0 0 12px;font-size:13.5px}
 .row3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:6px}
-
 .feature h3{margin:0;font-size:13px;color:var(--blue);font-weight:800}
 .feature p{margin:6px 0 10px;font-size:12.5px;color:#40506f;line-height:1.6}
 
 .mini-row{display:flex;align-items:center;gap:8px;font-size:12px;color:#4a5a7a}
-.mini-icon{
-  width:18px;height:18px;border-radius:999px;
-  background:rgba(91,134,255,.12);
-  border:1px solid rgba(91,134,255,.25);
-  display:inline-flex;align-items:center;justify-content:center;
-  color:var(--blue);
-  flex:0 0 auto;
-}
+.mini-icon{width:18px;height:18px;border-radius:999px;background:rgba(91,134,255,.12);border:1px solid rgba(91,134,255,.25);display:inline-flex;align-items:center;justify-content:center;color:var(--blue);flex:0 0 auto}
 
 .placeholders{margin-top:18px;height:320px;display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:center}
-.ph{
-  height:240px;
-  border:1px dashed rgba(230,236,251,.95);
-  border-radius:var(--r);
-  background:#fff;
-  box-shadow:0 6px 14px rgba(27,47,94,.04);
-  display:flex;align-items:center;justify-content:center;
-  color:#8a97b6;
-  font-size:12px;
-  text-align:center;
-  padding:12px;
-}
+.ph{height:240px;border:1px dashed rgba(230,236,251,.95);border-radius:var(--r);background:#fff;box-shadow:0 6px 14px rgba(27,47,94,.04);display:flex;align-items:center;justify-content:center;color:#8a97b6;font-size:12px;text-align:center;padding:12px}
 
-.steps{
-  margin-top:10px;
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:var(--r);
-  padding:14px 16px;
-  box-shadow:var(--shadow-soft);
-}
+.steps{margin-top:10px;background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:14px 16px;box-shadow:var(--shadow-soft)}
 .row4{margin-top:10px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
 .step{background:#f8faff;border:1px solid var(--border);border-radius:var(--r);padding:14px 12px;text-align:center}
 .step .n{font-size:20px;font-weight:800;color:var(--blue);margin-bottom:6px}
@@ -256,7 +168,7 @@ body{
 
     <div class="row4">
       <div class="step"><div class="n">1</div><div class="t">原稿に丸を描く</div><div class="d">手描きでセリフ部分を囲む</div></div>
-      <div class="step"><div class="n">2</div><div class="t">ツールを実行</div><div class="d">Wordマクロを起動</div></div>
+      <div class="step"><div class="n">2</div><div class="t">ツールを実行</div><div class="d">PowerShellからPythonスクリプトを実行（Wordを自動操作）</div></div>
       <div class="step"><div class="n">3</div><div class="t">自動処理</div><div class="d">枠化・色分け・集計</div></div>
       <div class="step"><div class="n">4</div><div class="t">結果確認</div><div class="d">レポート出力・確認</div></div>
     </div>
